@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BrookSkully</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/10.7.2/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/10.7.2/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.7.2/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.7.2/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.7.2/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.7.2/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.7.2/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.7.2/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.7.2/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.7.2/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+  
+  </head>
+  <body>
+    <div id="message">
+      <h2>BrookSkully</h2>
+      <h1>BrookSkully</h1>
+      <p>YBrookSkully</p>
+       
+      
+    <h1>BrookSkully</h1>
+
+    <a alt="logo" target="_blank" href="https://brookskully.com">
+      <img src="../src/assets/IconWebSkully.png" alt="logo" target="_blank">
+    </a> 
+    <br>
+
+    Social Media
+    <br>
+
+
+    <a alt="Facebook" target="_blank" href="https://www.facebook.com/profile.php?id=61551866886516">Facebook</a> <br>
+
+
+    <a alt="Instagram" target="_blank" href="https://www.instagram.com/brookskully/">Instagram</a> <br>
+
+    <a alt="Twitter" target="_blank" href="https://twitter.com/brainpanbrook">Twitter</a> <br>
+
+    <a alt="Patreon" target="_blank" href="https://www.patreon.com/BrookSkully">Patreon</a> <br>
+
+
+    <a alt="Tiktok" target="_blank" href="https://www.tiktok.com/@brookskully">Tiktok</a> <br>
+
+    <a alt="Youtube" target="_blank" href="https://www.youtube.com/channel/UCrXVENkGy6FBvRZ9NCMxR_w">Youtube</a> <br>
+
+    <a alt="Twitch" target="_blank" href="https://www.twitch.tv/brookskully">Twitch</a> <br>
+
+    <a alt="Vimeo" target="_blank" href="https://vimeo.com/user213961786">Vimeo</a> <br>
+    <a alt="Behance" target="_blank" href="https://www.behance.net/brookskully">Behance</a> <br>
+
+    <a alt="Paypal" target="_blank" href="https://paypal.me/Juandalebrook?country.x=ES&locale.x=es_ES">Paypal</a> <br>
+
+    <a alt="Whatsapp" target="_blank" href="https://wa.me/330698494823">Whatsapp</a> <br>
+    </div>
+  
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+ 
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
+</html>
