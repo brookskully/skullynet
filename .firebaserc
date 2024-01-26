@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "skullynet": {
+      "hosting": {
+        "app": [
+          "skullynet"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "skullynet"
+  }
+}
