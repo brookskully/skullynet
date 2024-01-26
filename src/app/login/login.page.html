@@ -15,14 +15,21 @@
 
       <ion-item fill="solid" class="ion-margin-bottom">
         <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
-        <ion-note slot="error" 
-        *ngIf="(email?.dirty || email?.touched) && email?.errors">
-          Email erroneo
+        <ion-note slot="error"  
+          *ngIf="(email?.dirty || email?.touched) && email?.errors">
+            Email erroneo
         </ion-note>
       </ion-item>
-   
-      <ion-button type="submit">Login</ion-button>
-      <ion-button type="button">Register</ion-button>
+      <ion-item fill="solid" class="ion-margin-bottom">
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+        <ion-note slot="error"  
+          *ngIf="(password?.dirty || password?.touched) && password?.errors">
+          Password erroneo, prueba a añadir un mínimo de 6
+        </ion-note>
+      </ion-item>
+
+      <ion-button type="submit" expand="full" [disabled]="!credentials.valid">Login</ion-button>
+      <ion-button type="button" expand="full" (click)="register()">Register</ion-button>
     </form>
   </ion-content>
 </ion-content>

@@ -10,7 +10,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  credentials: FormGroup;
+  public credentials: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -18,22 +18,25 @@ export class LoginPage implements OnInit {
     private alertController: AlertController,
     private authService: AuthService,
     private router : Router
-  ) {}
+  ) {
+    this.credentials = fb.group({});
+  }
 
 
   get email(){
     return this.credentials.get("email");
   }
-  
+
   get password(){
     return this.credentials.get("password");
   }
 
+  
   ngOnInit() {
     this.credentials = this.fb.group(
       {
-        email: ["", [Validators.required, Validators.email]], 
-        password:["", [Validators.required, Validators.minLength]]
+        email: ['', [Validators.required, Validators.email]], 
+        password: ['', [Validators.required, Validators.minLength]]
       }
     )
   }
@@ -55,7 +58,8 @@ export class LoginPage implements OnInit {
   async login(){
     const loading = await this.loadingController.create();
     await loading.present();
-    const user = await this.authService.login(this.credentials.value.email, this.credentials.value.password);
+    const user = await this.authService.login(this.email, this.password);
+    console.log(user)
     await loading.dismiss();
     if(user){
       this.router.navigateByUrl("/home", {replaceUrl : true});
